@@ -5,11 +5,12 @@
 using namespace std;
 #define MAX 7 
 int oarray[MAX];
-
+int random;
 void af() {
+	random = rand() % 49 + 1;
 	for (int i = 0; i < MAX; i++)
 	{
-		if (rand() % 49 + 1 == oarray[i])
+		if (random == oarray[i])
 		{
 			af();
 		}
@@ -21,7 +22,7 @@ int main()
 	for (int i = 0; i < MAX; i++)
 	{
 		af();
-		oarray[i] = rand() % 49 + 1;
+		oarray[i] = random;
 	}
 	std::sort(oarray, oarray + MAX);
 	std::swap(oarray[0], oarray[6]);
